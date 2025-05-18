@@ -117,7 +117,7 @@ const modal = document.getElementById("newsletter-modal");
             setTimeout(() => {
               modal.classList.add("hidden");
               document.body.style.overflow = "auto";
-            }, 1500);
+            }, 2000);
           } else {
             alert("Oops! Something went wrong.");
             resetButton();
