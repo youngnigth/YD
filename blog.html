@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Primary Meta Tags -->
-  <title>Boost Your Life Blog – Latest Productivity Tips</title>
+  <title>Young Desert Blog</title>
   <meta name="title" content="Boost Your Life Blog – Latest Productivity Tips">
   <meta name="description" content="Explore articles on boosting productivity, time management hacks, and setting up your dream home office.">
 
@@ -50,13 +50,13 @@
       <div class="bg-white p-6 rounded-lg shadow-md">
         <h3 class="text-2xl font-bold mb-2">Top 5 Productivity Apps for 2025</h3>
         <p class="mb-4 text-gray-600">Boost your workflow with these essential tools — affiliate links inside!</p>
-        <a href="YOUR_AFFILIATE_LINK" target="_blank" class="text-blue-600 underline">Read More</a>
+        <a href="post.html?posts=manina" target="_blank" class="text-blue-600 underline">Read More</a>
       </div>
 
       <div class="bg-white p-6 rounded-lg shadow-md">
         <h3 class="text-2xl font-bold mb-2">How to Set Up Your Perfect Home Office</h3>
         <p class="mb-4 text-gray-600">From standing desks to ergonomic chairs, create a powerhouse workspace.</p>
-        <a href="YOUR_AFFILIATE_LINK" target="_blank" class="text-blue-600 underline">Read More</a>
+        <a href="posts/morning-habits.json" target="_blank" class="text-blue-600 underline">Read More</a>
       </div>
 
       <div class="bg-white p-6 rounded-lg shadow-md">
@@ -67,9 +67,56 @@
     </div>
   </section>
 
+
+
+  <!-- WhatsApp Floating Button -->
+<!-- WhatsApp Floating Button with Icon -->
+<a href="https://wa.me/50368374195?text=Hola%20acabo%20de%20visitar%20Boost%20Your%20Life%20y%20me%20gustaría%20contactarlos!" 
+   target="_blank"
+   aria-label="Chat on WhatsApp"
+   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg z-50 flex items-center justify-center">
+
+  <!-- WhatsApp SVG Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 32 32" fill="currentColor">
+    <path d="M16.04 3C9.4 3 3.98 8.42 3.98 15.06c0 2.66.79 5.14 2.15 7.24L3 29l6.91-2.08a12.02 12.02 0 0 0 6.13 1.65h.01c6.63 0 12.05-5.42 12.05-12.05S22.67 3 16.04 3zm0 22.04c-2.02 0-3.92-.59-5.54-1.62l-.4-.25-4.1 1.24 1.25-3.99-.26-.41A10.05 10.05 0 0 1 6.04 15c0-5.54 4.5-10.04 10.04-10.04S26.12 9.46 26.12 15c0 5.54-4.5 10.04-10.08 10.04zm5.57-7.47c-.3-.15-1.76-.86-2.04-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.15-.18.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.48-1.77-1.65-2.07-.17-.3-.02-.47.13-.62.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5-.18 0-.37-.02-.57-.02-.2 0-.52.07-.78.37-.27.3-1.02 1-.99 2.43.03 1.42 1.03 2.8 1.18 3 .15.2 2.04 3.12 4.96 4.37.69.3 1.23.48 1.65.61.69.22 1.32.19 1.83.12.56-.08 1.76-.72 2.01-1.42.25-.7.25-1.29.18-1.42-.07-.13-.27-.2-.57-.34z"/>
+  </svg>
+</a>
+
+  <!-- WhatsApp Chat Popup -->
+<div id="whatsapp-chat-box" class="hidden fixed bottom-24 right-6 bg-white border border-gray-300 rounded-lg shadow-lg p-4 w-72 z-50">
+  <div class="flex justify-between items-center mb-2">
+    <span class="font-semibold text-gray-700">Chat with us on WhatsApp</span>
+    <button id="close-chat" class="text-gray-500 hover:text-red-500">&times;</button>
+  </div>
+  <p class="text-sm text-gray-600 mb-3">Hi there! 👋<br>How can we help you today?</p>
+  <a href="https://wa.me/50368374195?text=Hola%20acabo%20de%20visitar%20Boost%20Your%20Life%20y%20me%20gustaría%20contactarlos!" 
+     target="_blank"
+     class="block w-full bg-green-500 text-white text-center py-2 rounded-md hover:bg-green-600 transition">Start Chat</a>
+</div>
+
+
+
+
   <footer class="bg-white text-center p-6 mt-12">
     <p>&copy; 2025 Young Desert. All rights reserved.</p>
   </footer>
 
+
+  <script>
+  const whatsappBtn = document.querySelector('.fixed.bottom-6.right-6');
+  const chatBox = document.getElementById('whatsapp-chat-box');
+  const closeChatBtn = document.getElementById('close-chat');
+
+  whatsappBtn.addEventListener('click', function (e) {
+    e.preventDefault(); // prevent immediate redirect
+    chatBox.classList.toggle('hidden');
+  });
+
+  closeChatBtn.addEventListener('click', () => {
+    chatBox.classList.add('hidden');
+  });
+</script>
+
+  
 </body>
 </html>

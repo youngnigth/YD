@@ -1,35 +1,147 @@
+/* ===== General Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
-html { scroll-behavior: smooth; }
-
-#splash {
-  transition: opacity 0.5s ease;
-  background: linear-gradient(to bottom, #ebebeb, hsl(216, 54%, 84%));
+/* ===== Header ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 1.25rem;
 }
 
-/* Moneda animada */
-@keyframes flip {
-  0% { transform: rotateY(0deg) scale(1); }
-  50% { transform: rotateY(180deg) scale(1.05); }
-  100% { transform: rotateY(360deg) scale(1); }
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
 }
 
-.animate-flip {
-  animation: flip 3s infinite ease-in-out;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
-  border: 3px solid #ffd700; /* borde dorado real */
+nav a {
+  font-weight: 500;
+  color: #4b5563;
+  transition: color 0.3s;
 }
 
-/* Fade-in del lema */
-@keyframes fadeInMotto {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+nav a:hover {
+  color: #2563eb;
 }
 
-.show-motto {
-  animation: fadeInMotto 1.5s forwards;
+/* ===== Hero Section ===== */
+#home h2 {
+  color: #1e40af;
 }
 
+#home a {
+  font-weight: 600;
+}
 
+/* ===== Product Carousel Cards ===== */
+#products {
+  overflow: hidden;
+}
+
+#carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 1.5rem;
+  padding: 0 0.5rem;
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+}
+
+#carousel-track > div {
+  flex-shrink: 0;
+  width: 300px;
+  scroll-snap-align: center;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#carousel-track > div:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Hide scrollbars */
+#carousel-track::-webkit-scrollbar {
+  display: none;
+}
+#carousel-track {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Carousel Buttons */
+#products button {
+  transition: background-color 0.3s ease;
+}
+#products button:hover {
+  background-color: #2563eb;
+}
+
+/* ===== Newsletter Section ===== */
+#subscribe {
+  background: linear-gradient(to right, #c7d2fe, #bfdbfe);
+}
+
+#subscribe form input,
+#subscribe form button {
+  transition: all 0.3s ease;
+}
+
+#subscribe form input:focus {
+  outline: 2px solid #2563eb;
+}
+
+#subscribe form button:hover {
+  background-color: #2563eb;
+}
+
+/* ===== Modal Styling ===== */
+#newsletter-modal {
+  backdrop-filter: blur(3px);
+}
+
+#newsletter-modal form input:focus {
+  outline: 2px solid #3b82f6;
+}
+
+/* ===== Blog Section Cards ===== */
+section .rounded-lg {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section .rounded-lg:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Footer ===== */
+footer {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* ===== Floating Button (WhatsApp) ===== */
+a.fixed:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
