@@ -119,30 +119,45 @@ nav a:hover {
 #newsletter-modal {
   backdrop-filter: blur(3px);
   padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #newsletter-modal .bg-white {
   width: 100%;
-  max-width: 90%;
-  margin: 0 1rem;
-  padding: 1.5rem 1rem;
+  max-width: 500px;
+  padding: 2rem 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
 }
 
 #newsletter-modal h2 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 #newsletter-modal p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   text-align: center;
+  margin-bottom: 1.5rem;
+  color: #4b5563;
+}
+
+#newsletter-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 #newsletter-modal form input,
 #newsletter-modal form button {
   font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
   width: 100%;
 }
 
@@ -154,27 +169,57 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-/* Spinner style */
+#newsletter-modal button[type="submit"]:hover {
+  background-color: #2563eb;
+}
+
+/* Spinner */
 #newsletter-modal #spinner {
   width: 1.25rem;
   height: 1.25rem;
 }
 
-/* Very small devices */
+/* Responsive: Small devices */
 @media (max-width: 480px) {
   #newsletter-modal .bg-white {
-    padding: 1rem;
+    max-width: 90%;
+    padding: 1.5rem 1rem;
   }
 
   #newsletter-modal h2 {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
   }
 
   #newsletter-modal p {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
+  }
+
+  #newsletter-modal form input,
+  #newsletter-modal form button {
+    font-size: 0.95rem;
+    padding: 0.65rem;
+  }
+}
+
+/* Responsive: Large screens */
+@media (min-width: 768px) {
+  #newsletter-modal .bg-white {
+    padding: 2.5rem 2rem;
+    max-width: 600px;
+  }
+
+  #newsletter-modal h2 {
+    font-size: 2rem;
+  }
+
+  #newsletter-modal p {
+    font-size: 1.1rem;
   }
 }
 
