@@ -118,10 +118,64 @@ nav a:hover {
 /* ===== Modal Styling ===== */
 #newsletter-modal {
   backdrop-filter: blur(3px);
+  padding: 1rem;
+}
+
+#newsletter-modal .bg-white {
+  width: 100%;
+  max-width: 90%;
+  margin: 0 1rem;
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#newsletter-modal h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#newsletter-modal p {
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+#newsletter-modal form input,
+#newsletter-modal form button {
+  font-size: 1rem;
+  width: 100%;
 }
 
 #newsletter-modal form input:focus {
   outline: 2px solid #3b82f6;
+}
+
+#newsletter-modal button[type="submit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Spinner style */
+#newsletter-modal #spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Very small devices */
+@media (max-width: 480px) {
+  #newsletter-modal .bg-white {
+    padding: 1rem;
+  }
+
+  #newsletter-modal h2 {
+    font-size: 1.25rem;
+  }
+
+  #newsletter-modal p {
+    font-size: 0.875rem;
+  }
 }
 
 /* ===== Blog Section Cards ===== */
