@@ -1,0 +1,147 @@
+/* === Global Reset & Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+  line-height: 1.75;
+  font-size: 1rem;
+  min-height: 100vh;
+}
+
+/* === Layout Utilities === */
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* === Header === */
+header {
+  background: linear-gradient(90deg, #1e3a8a, #2563eb);
+  color: #ffffff;
+  text-align: center;
+  padding: 5rem 2rem 4rem;
+  border-bottom: 6px solid #1d4ed8;
+}
+
+header h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+/* === Sections === */
+main section {
+  margin-top: 3rem;
+}
+
+h2, h3 {
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  color: #374151;
+}
+
+/* === Form Styling === */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.form input,
+.form textarea,
+.form input[type="file"] {
+  padding: 0.9rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form input:focus,
+.form textarea:focus,
+.form input[type="file"]:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+/* === File Label === */
+.file-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #334155;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* === Button === */
+.btn-join {
+  padding: 0.85rem 1.5rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-join:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* === Footer === */
+footer {
+  background-color: #f3f4f6;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 4rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* === Responsive === */
+@media (max-width: 640px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .btn-join {
+    width: 100%;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Young Desert – Build the Future Together</title>
+  <link rel="stylesheet" href="join.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container text-center">
+      <h1>Build the Future with Young Desert</h1>
+      <p class="lead">We’re not hiring—<strong>we’re inviting visionaries</strong> to co-create opportunities for the next generation.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="mission">
+      <h2>Why Join Us?</h2>
+      <p>
+        At <strong>Young Desert</strong>, we believe in empowering talent through innovation, finance, and purpose. We are building more than just a team—we're creating a movement.
+      </p>
+    </section>
+
+    <section class="values">
+      <h3>What We Value</h3>
+      <ul>
+        <li>Impactful work that creates opportunities</li>
+        <li>Collaboration and inclusion</li>
+        <li>Excellence, creativity, and ownership</li>
+        <li>Serving and uplifting future leaders</li>
+      </ul>
+    </section>
+
+<section class="join">
+  <h2>Want to Co-Create With Us?</h2>
+  <p>If you have a passion for writing, teaching, tech, business, or finance—and want to build something meaningful—drop your name and email below. We'll reach out to start the conversation.</p>
+
+  <!-- Web3Forms Contact Form -->
+  <form id="join-form" action="https://api.web3forms.com/submit" method="POST" class="form" style="position: relative;">
+    <input type="hidden" name="access_key" value="3a7e0042-9451-4644-bf29-1d9806ff8254">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Why do you want to join?" rows="4" required></textarea>
+    <button type="submit" class="btn-join">Join the Movement</button>
+
+    <!-- Spinner -->
+    <div id="spinner" style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+      <div style="border:4px solid #f3f3f3; border-top:4px solid #2563eb; border-radius:50%; width:32px; height:32px; animation:spin 1s linear infinite;"></div>
+    </div>
+
+    <!-- Thank You Message -->
+    <p id="form-message" style="display:none; margin-top: 1rem; color: green; font-weight: bold;">🎉 Submitted!</p>
+  </form>
+</section>
+
+  </main>
+
+  <footer>
+    <div class="container text-center">
+      <p>&copy; 2025 Young Desert. Empowering the next generation.</p>
+    </div>
+  </footer>
+
+
+    <!-- Confetti CDN -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<!-- Inside your existing <script> block -->
+<script>
+  const form = document.getElementById("join-form");
+  const message = document.getElementById("form-message");
+  const spinner = document.getElementById("spinner");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    spinner.style.display = "block";
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+    })
+    .then(response => {
+      spinner.style.display = "none";
+      if (response.ok) {
+        form.reset(); // ✅ Clear the form inputs
+        message.style.display = "block";
+
+        // Confetti 🎉
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+
+        // Reload after 2.5s
+        setTimeout(() => {
+          location.reload();
+        }, 2500);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    })
+    .catch(() => {
+      spinner.style.display = "none";
+      alert("Error submitting form.");
+    });
+  });
+</script>
+
+</body>
+</html>
