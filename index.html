@@ -1,251 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Young Desert</title>
-  <style ></style>
-  <!-- TailwindCSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <!-- Smooth Scroll -->
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YD – Exclusive Creator Merch</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;800&display=swap" rel="stylesheet" />
 </head>
+<body>
 
-<body class="bg-gray-50 text-gray-800">
-
-  <!-- Header -->
-  <header class="bg-white shadow-md p-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold">YD</h1>
-    
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex space-x-6">
-      <a href="#home" class="hover:text-blue-600">Home</a>
-      <!--<a href="#about" class="hover:text-blue-600">About</a> 
-      <a href="#features" class="hover:text-blue-600">Features</a>
-      <a href="#testimonials" class="hover:text-blue-600">Testimonials</a>
-      <a href="#guides" class="hover:text-blue-600">Guides</a>
-      <a href="https://api.whatsapp.com/send/?phone=50368374195" target="_blank" class="hover:text-blue-600">Contact</a> -->
-      <a href="blog.html" class="hover:text-blue-600">What's New</a>
-    </nav>
-
-    <!-- Mobile Menu Button -->
-    <button id="menu-btn" class="md:hidden">
-      <svg class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
-      </svg>
+  <!-- Header with Logo + Hamburger Left-Aligned -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <h1 class="logo">Young Culture</h1>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-6 z-20">
-      <a href="#home" class="hover:text-blue-600">Home</a>
-      <!-- <a href="#about" class="hover:text-blue-600">About</a> -->
-      <!-- <a href="#features" class="hover:text-blue-600">Features</a> -->
-      <!-- <a href="#testimonials" class="hover:text-blue-600">Testimonials</a>  -->
-      <!-- <a href="#guides" class="hover:text-blue-600">Guides</a>  -->
-      <!-- <a href="https://api.whatsapp.com/send/?phone=50368374195" target="_blank" class="hover:text-blue-600">Contact</a>  -->
-      <a href="blog.html" class="hover:text-blue-600">What's New</a>
+    <nav id="mobile-menu" class="nav-links">
+        <a href="https://youngnigth.github.io/YD/blog.html">Blog</a>
+        <!-- <a href="#">Lookbook</a> -->
+        <a href="storev1.html">Store</a>
+        <a href="cart.html">Cart 🛒 <span id="cart-count" class="cart-count">0</span></a>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="home" class="text-center py-20 px-6">
-    <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Unlock Your Business Potential</h2>
-    <p class="mb-8 text-lg md:text-xl">Discover tools and insights to maximize your efficiency.</p>
-    <a href="#subscribe" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition">Join Our Free Newsletter</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay">
+      <h1>CREATOR. CURATOR. ICON.</h1>
+      <p>Limited drops designed for the bold. No compromises. No restocks.</p>
+      <a href="storev1.html" class="btn">Enter Store</a>
+    </div>
   </section>
 
-  <!-- Products -->
-   
-  <!-- Products Carousel -->
-<section id="products" class="py-16 px-6">
-  <h2 class="text-3xl font-bold text-center mb-8">Explore. Learn and more...</h2>
-  <div class="relative">
-    <!-- Carousel Wrapper -->
-    <div id="carousel-track" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory space-x-6">
-      
-      <!-- Slide 1 -->
-      <div class="min-w-[300px] snap-center bg-white rounded-lg shadow-md p-6 hover:scale-105 transform transition">
-        <img src="microsoft.jpg" alt="Top Productivity Tool" class="rounded-md mb-4">
-        <h3 class="text-2xl font-semibold mb-2">Top Productivity App</h3>
-        <p class="text-gray-600 mb-4">Organize your tasks like a pro with this all-in-one tool.</p>
-        <a href="posts/morning-habits.json" target="_blank" class="text-blue-600 font-semibold">Learn More →</a>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="min-w-[300px] snap-center bg-white rounded-lg shadow-md p-6 hover:scale-105 transform transition">
-        <img src="mith.jpg" alt="Top Productivity Tool" class="rounded-md mb-4">
-        <h3 class="text-2xl font-semibold mb-2">Top Productivity App</h3>
-        <p class="text-gray-600 mb-4">Organize your tasks like a pro with this all-in-one tool.</p>
-        <a href="YOUR_AFFILIATE_LINK" target="_blank" class="text-blue-600 font-semibold">Learn More →</a>
-      </div>
-
-    <!-- Slide 3 -->
-      <div class="min-w-[300px] snap-center bg-white rounded-lg shadow-md p-6 hover:scale-105 transform transition">
-        <img src="hunters.jpg" alt="Top Productivity Tool" class="rounded-md mb-4">
-        <h3 class="text-2xl font-semibold mb-2">Top Productivity App</h3>
-        <p class="text-gray-600 mb-4">Organize your tasks like a pro with this all-in-one tool.</p>
-        <a href="YOUR_AFFILIATE_LINK" target="_blank" class="text-blue-600 font-semibold">Learn More →</a>
-      </div>  
-
-         <!-- Slide 3 -->
-      <div class="min-w-[300px] snap-center bg-white rounded-lg shadow-md p-6 hover:scale-105 transform transition">
-        <img src="nastuh.jpg" alt="Top Productivity Tool" class="rounded-md mb-4">
-        <h3 class="text-2xl font-semibold mb-2">Top Productivity App</h3>
-        <p class="text-gray-600 mb-4">Organize your tasks like a pro with this all-in-one tool.</p>
-        <a href="YOUR_AFFILIATE_LINK" target="_blank" class="text-blue-600 font-semibold">Learn More →</a>
-      </div>
-
-         <!-- Slide 3 -->
-      <div class="min-w-[300px] snap-center bg-white rounded-lg shadow-md p-6 hover:scale-105 transform transition">
-        <img src="cathe.jpg" alt="Top Productivity Tool" class="rounded-md mb-4">
-        <h3 class="text-2xl font-semibold mb-2">Top Productivity App</h3>
-        <p class="text-gray-600 mb-4">Organize your tasks like a pro with this all-in-one tool.</p>
-        <a href="YOUR_AFFILIATE_LINK" target="_blank" class="text-blue-600 font-semibold">Learn More →</a>
-      </div>
-
-         <!-- Slide 3 -->
-      <div class="min-w-[300px] snap-center bg-white rounded-lg shadow-md p-6 hover:scale-105 transform transition">
-        <img src="matt.jpg" alt="Top Productivity Tool" class="rounded-md mb-4">
-        <h3 class="text-2xl font-semibold mb-2">Top Productivity App</h3>
-        <p class="text-gray-600 mb-4">Organize your tasks like a pro with this all-in-one tool.</p>
-        <a href="YOUR_AFFILIATE_LINK" target="_blank" class="text-blue-600 font-semibold">Learn More →</a>
-      </div>
-
-
-         <!-- Slide 3 -->
-      <div class="min-w-[300px] snap-center bg-white rounded-lg shadow-md p-6 hover:scale-105 transform transition">
-        <img src="sincerely.jpg" alt="Top Productivity Tool" class="rounded-md mb-4">
-        <h3 class="text-2xl font-semibold mb-2">Top Productivity App</h3>
-        <p class="text-gray-600 mb-4">Organize your tasks like a pro with this all-in-one tool.</p>
-        <a href="YOUR_AFFILIATE_LINK" target="_blank" class="text-blue-600 font-semibold">Learn More →</a>
-      </div>
+  <!-- Editorial Section -->
+  <section class="editorial">
+    <h2>Essentials Reimagined</h2>
+    <p>Inspired by underground streetwear culture & minimalist design.</p>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1508835277982-1c1b0e205603?w=500&auto=format&fit=crop&q=60" alt="Drop 1" />
+      <img src="https://images.unsplash.com/photo-1546572797-e8c933a75a1f?w=500&auto=format&fit=crop&q=60" alt="Drop 2" />
+      <img src="https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?w=500&auto=format&fit=crop&q=60" alt="Drop 3" />
     </div>
-
-    <!-- Optional: Arrows -->
-    <div class="flex justify-center mt-6 gap-4">
-      <button onclick="scrollCarousel(-1)" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">&larr;</button>
-      <button onclick="scrollCarousel(1)" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">&rarr;</button>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Subscribe -->
-<!-- Redesigned Subscribe Section -->
-<section id="subscribe" class="py-20 px-6 bg-gradient-to-r from-blue-100 to-indigo-100">
-  <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-xl p-8 md:p-12 text-center">
-    <h3 class="text-3xl font-bold mb-4 text-gray-800">📬 Join Free Now!!</h3>
-    <p class="text-lg text-gray-600 mb-8">Get the best productivity tips, exclusive deals, and powerful tools delivered weekly to your hands.</p>
-
-<form id="subscribe-form" action="https://api.web3forms.com/submit" method="POST" class="flex flex-col md:flex-row items-center justify-center gap-4">
-  <input type="hidden" name="access_key" value="3a7e0042-9451-4644-bf29-1d9806ff8254">
-
-  <input 
-    type="text" 
-    name="name" 
-    placeholder="Your full name" 
-    required 
-    class="w-full md:w-64 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-  >
-
-  <input 
-    type="email" 
-    name="email" 
-    placeholder="Your email address" 
-    required 
-    class="w-full md:w-64 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-
-     <button 
-        type="submit" 
-        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-200">
-         Subscribe
-      </button>
-    </form>
-  </div>
-</section>
-
+  </section>
 
   <!-- Footer -->
-<!-- Footer -->
-<footer class="bg-gray-100 text-gray-700 mt-12">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-    
-    <!-- Logo / Brand -->
-    <div>
-      <h2 class="text-xl font-bold mb-3 text-gray-900">Young Desert</h2>
-      <p class="text-sm">Inspiring minds, building the future. Join our journey toward productivity and purpose.</p>
-    </div>
+  <footer>
+    <p>© 2025 Young Culture. Crafted for creators.</p>
+  </footer>
 
-    <!-- Navigation Links -->
-    <div>
-      <h3 class="text-sm font-semibold mb-3 text-gray-800">Quick Links</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
-        <li><a href="blog.html" class="hover:text-blue-500">Blog</a></li>
-        <li><a href="https://youngnigth.github.io/Tool/" class="hover:text-blue-500">Tools</a></li>
-        <li><a href="https://youngnigth.github.io/Store/storev1.html" class="hover:text-blue-500">Store</a></li>
-        <li><a href="join.html" class="hover:text-blue-500">YD Team</a></li>
-      </ul>
-    </div>
+  <!-- Scripts -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("active");
 
-    <!-- Social Media -->
-    <div>
-      <h3 class="text-sm font-semibold mb-3 text-gray-800">Follow Us</h3>
-      <div class="flex space-x-4">
-        <a href="https://www.instagram.com/theyoungdesert?igsh=MWhpZmEwZHM2N215Nw%3D%3D&utm_source=qr" aria-label="Instagram" class="text-gray-500 hover:text-pink-600">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zM12 8.5A3.5 3.5 0 1015.5 12 3.5 3.5 0 0012 8.5zM17.5 6a1 1 0 11-1 1 1 1 0 011-1z"/>
-          </svg>
-        </a>
-        <a href="https://x.com/sedgori?s=21" aria-label="Twitter" class="text-gray-500 hover:text-blue-400">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 19c7.547 0 11.675-6.155 11.675-11.488 0-.175 0-.349-.012-.522A8.18 8.18 0 0022 4.4a8.19 8.19 0 01-2.357.636A4.078 4.078 0 0021.448 3a8.2 8.2 0 01-2.605.981 4.1 4.1 0 00-6.993 3.733A11.65 11.65 0 013 3.15a4.065 4.065 0 001.27 5.467A4.106 4.106 0 012.8 8.3v.052A4.1 4.1 0 006.1 12a4.084 4.084 0 01-1.853.07A4.1 4.1 0 008 15.291a8.233 8.233 0 01-5.087 1.723A8.34 8.34 0 012 17.001 11.616 11.616 0 008 19z"/>
-          </svg>
-        </a>
-        <a href="#" aria-label="YouTube" class="text-gray-500 hover:text-red-600">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 576 512">
-            <path d="M549.655 124.083C537.72 80.798 502.246 45.26 458.899 33.306 407.693 18.565 288 18.565 288 18.565s-119.693 0-170.899 14.741C73.754 45.26 38.28 80.798 26.345 124.083 12 178.573 12 256 12 256s0 77.427 14.345 131.917c11.935 43.285 47.409 78.823 90.756 90.777C168.307 493.435 288 493.435 288 493.435s119.693 0 170.899-14.741c43.347-11.954 78.821-47.492 90.756-90.777C564 333.427 564 256 564 256s0-77.427-14.345-131.917zM232 338.772V173.228L374.545 256 232 338.772z"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
+      // Optional: close menu when a link is clicked (mobile)
+      const links = menu.querySelectorAll("a");
+      links.forEach(link => {
+        link.addEventListener("click", () => {
+          menu.classList.remove("active");
+        });
+      });
+    }
 
-  <!-- Copyright -->
-  <div class="bg-gray-200 text-center py-4 text-sm text-gray-600">
-    &copy; 2025 Young Desert. All rights reserved.
-  </div>
-</footer>
+    function updateCartCounter() {
+      const cart = JSON.parse(localStorage.getItem("dropculture-cart")) || [];
+      const counter = document.getElementById("cart-count");
+      if (counter) {
+        counter.textContent = cart.length;
+        counter.style.display = cart.length > 0 ? "inline-block" : "none";
+      }
+    }
 
-
-
-  <!-- Start Newsletter Modal -->
-<div id="newsletter-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-  <div class="modal-content">
-    <button id="close-modal">&times;</button>
-    <h2>You're Business Owner? </br>Join Now! </h2>
-    <p class="text-gray-600 mb-4 text-center">Get the latest productivity tips and exclusive content right in your inbox.</p>
-    <form action="https://api.web3forms.com/submit" method="POST" id="newsletter-form" class="space-y-4">
-      <input type="hidden" name="access_key" value="3a7e0042-9451-4644-bf29-1d9806ff8254" />
-      <input type="email" name="email" placeholder="Your email address" required class="w-full p-3 border border-gray-300 rounded-md">
-     <button id="newsletter-submit-btn" type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition flex justify-center items-center gap-2">
-        <span id="submit-text">Subscribe</span>
-        <svg id="spinner" class="animate-spin text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
-        </svg>
-</button>
-    </form>
-  </div>
-</div>
-
-<!-- Toast Notification -->
-<div id="toast" class="fixed bottom-6 right-6 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg opacity-0 transition-opacity duration-300 z-50">
-  ✅ Thanks for subscribing!
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<script src="scripts.js"></script>
+    document.addEventListener("DOMContentLoaded", updateCartCounter);
+  </script>
 </body>
 </html>

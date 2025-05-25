@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart – YoungCulture</title>
+  <link rel="stylesheet" href="cart.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;800&display=swap" rel="stylesheet" />
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Young Culture</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="storev1.html">Store</a>
+    </nav>
+  </header>
+
+  <main class="cart-page">
+    <section class="cart-container">
+      <h1 class="cart-title">🛒 Your Cart</h1>
+      <div id="cart-items" class="cart-list"></div>
+
+      <div class="cart-summary">
+        <h2>Total: $<span id="total-price">0.00</span></h2>
+        <button onclick="checkout()" class="btn checkout-btn">Checkout</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Young Culture. Crafted for creators.</p>
+  </footer>
+  <script src="product-page.js"></script>
+    <script src="products.js"></script>
+  <script>
+    const cartItemsContainer = document.getElementById("cart-items");
+    const totalPriceSpan = document.getElementById("total-price");
+
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem("dropculture-cart")) || [];
+      cartItemsContainer.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = "<p class='empty'>Your cart is empty.</p>";
+        totalPriceSpan.textContent = "0.00";
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        total += item.price;
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "cart-item";
+        itemDiv.innerHTML = `
+          <div class="info">
+            <h3>${item.product}</h3>
+            <p>$${item.price.toFixed(2)}</p>
+          </div>
+          <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+        `;
+        cartItemsContainer.appendChild(itemDiv);
+      });
+
+      totalPriceSpan.textContent = total.toFixed(2);
+    }
+
+    function removeFromCart(index) {
+      const cart = JSON.parse(localStorage.getItem("dropculture-cart")) || [];
+      cart.splice(index, 1);
+      localStorage.setItem("dropculture-cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    async function checkout() {
+      const cart = JSON.parse(localStorage.getItem("dropculture-cart")) || [];
+
+      if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+      }
+
+      const response = await fetch("http://localhost:4242/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cart })
+      });
+
+      const session = await response.json();
+      const stripe = Stripe("pk_live_51Qm0kgAYknGrVrww7HfXEc5qu1g6uq0mgV2zS7vcYON4N3klEgFtGIUhptvGdvTKHD9ibjXxbbTKzPqUvsSZ52xm00h31mpB9k"); // Make sure to use your public key
+      stripe.redirectToCheckout({ sessionId: session.id });
+    }
+
+    document.addEventListener("DOMContentLoaded", renderCart);
+  </script>
+
+</body>
+</html>
